@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% block head %}{% endblock %}
+</head>
+<body>
+<div class="background">
+    <header class="login123">
+        {% if current_user.is_authenticated %}
+        <p>Welcome {{ current_user.id }}.<span class="logout"><a href="/logout">Log out</a></span></p>
+        {% endif %}
+    </header>
+    <nav class="mynavbar">
+        <div class="logo">
+            <a href="/"><h4>PR Program</h4></a>
+        </div>
+        <ul class="navlinks">
+            {% if current_user.is_authenticated %}
+            <li>
+                <a href="/create">Create</a>
+                <a href="/programs">Programs</a>
+                <a href="/changepassword">Change Password</a>
+            </li>
+            {% else %}
+            <li>
+                <a href="/create">Create</a>
+                <a href="/programs">Programs</a>
+                <a href="/login">Log In</a>
+                <a href="/register">Register</a>
+            </li>
+            {% endif %}
+        </ul>
+        <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+    <div class="errorLogin">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <p>{{ message }}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+    {% block content %}{% endblock %}
+</div>
+<script src="static/app.js"></script>
+</body>
+</html>
+{% block script %}{% endblock %}

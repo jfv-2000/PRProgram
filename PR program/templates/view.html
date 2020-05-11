@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}My Programs{% endblock %}
+{% block content %}
+<div class="home">
+    <h1>Program : {{name}}</h1>
+    <label class="view">PR: &nbsp;<span>{{data[3]}}</span>&nbsp; lbs</label> &nbsp;
+    <a href="/modifyPR/{{name}}"><button class="modifyPR">Modify</button></a>
+    <table class="view" border="1">
+        <tr>
+            <th>Set</th>
+            <th>#reps</th>
+            <th>%PR</th>
+            <th>Weigth</th>
+            <th>Plates(each side)</th>
+        </tr>
+        {% for x in range(setNumber) %}
+        <tr>
+            <td>{{x+1}}</td>
+            {% for y in rowRepsPr[x] %}
+            <td>{{y}}</td>
+            {% endfor %}
+            <td>{{weightData[x]}}</td>
+            <td>{{platesData[x]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<script src="/static/jquery-3.5.0.min.js"></script>
+<script src="/static/program.js"></script>
+{% endblock %}

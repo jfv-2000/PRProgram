@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}My Programs{% endblock %}
+{% block content %}
+<div class="home">
+    <h1 class="myprogram">My Programs</h1>
+    <div class="programs">
+        <ol class="nameProgram">
+            <form method="post" name="deleteform">
+            {% for x in range(number) %}
+            <li class="nameProgram">
+                <a id="program_name" href="/view/{{data[x]}}" class="programclass">{{ data[x] }}</a>
+                <input type="submit" name="delete{{x}}" value="Delete" class="deleteButton">
+            </li>
+            {% endfor %}
+            </form>
+        </ol>
+    </div>
+</div>
+<<script src="/static/jquery-3.5.0.min.js"></script>
+<script src="/static/program.js"></script>>
+{% endblock %}

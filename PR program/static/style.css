@@ -1,0 +1,371 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+p, h1 {
+    font-family: 'Open Sans', sans-serif;
+    color: gainsboro;
+}
+
+h1 {
+    margin: 10px;
+}
+
+p {
+    font-size: 20px
+}
+
+body, html {
+    height: 100%;
+    background-color: dimgrey;
+}
+
+.background {
+    background-image: url("/static/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+nav.mynavbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 6vh;
+    font-family: 'Open Sans', sans-serif;
+    background-color: dimgray;
+}
+
+
+.logo a {
+    color: lightsteelblue;
+    letter-spacing: 5px;
+    font-size: 25px;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.navlinks {
+    display: flex;
+}
+
+.navlinks li {
+    list-style: none;
+}
+
+
+.navlinks a {
+    color: lightsteelblue;
+    text-decoration: none;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    padding-right: 40px;
+    padding-left: 20px;
+}
+
+.navlinks a:hover {
+    font-weight: bolder;
+    color: white;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: lightsteelblue;
+    margin: 5px;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .navlinks {
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 8vh;
+        background-color: dimgray;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 30%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .navlinks li {
+        opacity: 0;
+        text-align: center;
+    }
+
+    .burger {
+        display: block;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.home {
+    margin: auto;
+    margin-top: 10%;
+    width: 40%;
+    padding: 0;
+    text-align: center;
+    background: rgba(37, 49, 59, 0.9);
+    border-radius: 25px;
+}
+
+.home h1 {
+    color: lavender;
+}
+
+.register-input {
+    margin: 10px 0px 0px 0px;
+}
+
+
+.register-input input {
+    height: 30px;
+    width: 30%;
+    font-size: 20px;
+    border-radius: 4px;
+    border: 1px solid;
+    margin: 0px;
+    padding: 0px;
+}
+
+.button {
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: lightsteelblue;
+    background-color: dimgray;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.password-input {
+    margin: 10px 0px 0px 0px;
+}
+
+.password-input input {
+    height: 30px;
+    width: 30%;
+    font-size: 20px;
+    border-radius: 4px;
+    border: 1px solid;
+    margin: 0px;
+    padding: 0px;
+}
+
+#errorUsername, #errorPassword, #errorPassword2 {
+    color: red;
+    font-family: sans-serif;
+    margin: auto;
+}
+
+.errorLogin {
+    background-color: red;
+    color: black;
+    font-weight: bolder;
+    text-align: center;
+    margin: auto;
+    width: 20%;
+}
+
+.login123 p {
+    width: 100%;
+    text-align: left;
+    background-color: grey;
+    color: black;
+    padding-left: 5%;
+    font-weight: bolder;
+    text-decoration: none;
+    margin: 0;
+    font-size: 20px;
+}
+.logout a{
+    float: right;
+    font-weight: bolder;
+    color: lavender;
+    margin-right: 5%;
+    text-decoration: none;
+}
+
+.logout a:hover {
+    color: beige;
+    font-weight: bolder;
+}
+
+.create {
+    font-family: sans-serif;
+    color: lightsteelblue;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.create input {
+    border-radius: 5px;
+    color: black;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.PR {
+    width: 55px;
+}
+.lbs {
+    color: antiquewhite;
+}
+
+#set {
+    color: black;
+    background-color: yellow;
+}
+#formRow{
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+}
+
+.delete {
+    float:right;
+    position: absolute;
+}
+
+#add {
+    margin-bottom: 10px;
+}
+
+#numSet{
+    width: 50px;
+}
+
+.hidethis {
+    display: none;
+}
+
+#maxSet {
+    background-color: red;
+    color: black;
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+.nameProgram{
+    margin-bottom: 15px;
+}
+.nameProgram a{
+    color: pink;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+.nameProgram a:hover{
+    color: red;
+    font-weight: bolder;
+}
+
+.myprogram {
+    padding: 20px;
+}
+
+.programclass{
+
+}
+
+.view {
+    font-size: 20px;
+    color: lightsteelblue;
+}
+.view span {
+    background-color: red;
+    padding: 2px;
+}
+table.view {
+    border-radius: 15px;
+    border-color: lightsteelblue;
+    color: lightsteelblue;
+    margin: auto;
+}
+table.view th {
+    padding: 3px;
+    font-size: larger;
+    text-align: center;
+}
+
+table.view td {
+    padding: 3px;
+}
+
+#errorPR {
+    color: red;
+    font-family: sans-serif;
+    margin: auto;
+}
+
+ol.nameProgram{
+    color: pink;
+    font-size: 20px;
+}
+
+.deleteButton{
+    color: black;
+    background-color: red;
+}
+
+.deleteButton:hover {
+    font-weight: bolder;
+}
+
+.modifyPR {
+    color: black;
+    background-color: green;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.modifyPR:hover {
+    font-weight: bolder;
+    background-color: darkgreen;
+}
+
+.textModify {
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.changepassword {
+    font-size: 15px;
+}
+

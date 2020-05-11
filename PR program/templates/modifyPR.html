@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Modify PR{% endblock %}
+{% block content %}
+<div class="home">
+    <h1>What is your new PR ?</h1>
+    <form method="post">
+        <input type="number" placeholder="PR" class="textModify" name="modifyPR" required>
+        <input type="submit" value="Submit" class="modifyPR" >
+    </form>
+</div>
+{% endblock %}

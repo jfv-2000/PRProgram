@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Create Program{% endblock %}
+{% block content %}
+<div class="home">
+    <h1 class="register-input">Create Program</h1>
+    <div id="maxSet"></div>
+    <div class="create">
+        <form method="post" onsubmit="return Validate()" name="createProgram">
+            <label>What would you like to name your program ?</label>
+            <input type="text" name="programName" required>
+            <label>What is your PR ?
+                <input type="number" name="PR" class="PR" required> <span class="lbs">lbs</span></label><br>
+            <div id="errorPR"></div>
+            <button type="button" class="btn btn-success" id="add">Add new set</button>
+            <div id="formRow">
+                <input type="number" name="reps[1]" class="PR" placeholder="#reps" required>
+                <input type="number" name="percent[1]" class="PR" placeholder="%PR" required>
+                <div id="errorReps"></div>
+                <div id="errorPercent"></div>
+            </div>
+            <div class="hidethis">Number of Sets: <input type="text" id="numSet" name="numberSet"></div>
+            <button type="submit" name="create" class="button">Create</button>
+        </form>
+    </div>
+</div>
+<script src="/static/jquery-3.5.0.min.js"></script>
+<script src="/static/create.js"></script>
+{% endblock %}
