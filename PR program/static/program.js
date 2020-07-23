@@ -1,5 +1,3 @@
-console.log("BITCH")
-console.log("why")
 
 var i = 0;
 $('.programclass').each(function () {
